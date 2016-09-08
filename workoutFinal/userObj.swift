@@ -35,7 +35,10 @@ class userObj: NSObject {
         
     }
     
-    
+    override var description: String {
+        return "FNAME: \(FNAME), LNAME: \(LNAME), EMAIL: \(EMAIL), USERNAME: \(USERNAME), PASSWORD: \(PASSWORD), WEIGHT: \(WEIGHT), HEIGHT: \(HEIGHT)"
+        
+    }
     
     
 }

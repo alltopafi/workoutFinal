@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WuU-zW-ucR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WuU-zW-ucR">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="loginButton:" destination="WuU-zW-ucR" eventType="touchUpInside" id="vZF-ww-sVQ"/>
+                                    <action selector="loginButton:" destination="WuU-zW-ucR" eventType="touchUpInside" id="3hm-ny-Lxj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBZ-k5-9Y2">
@@ -47,9 +47,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="createAccountButton" destination="qBZ-k5-9Y2" id="opD-Ro-38g"/>
-                        <outlet property="passwordField" destination="dWB-em-ud3" id="J68-ML-5yT"/>
-                        <outlet property="usernameField" destination="4sl-Uc-RhM" id="u8G-xP-4yW"/>
+                        <outlet property="passwordField" destination="uDJ-ZX-hME" id="hRb-Rp-YwT"/>
+                        <outlet property="usernameField" destination="4sl-Uc-RhM" id="dEq-VB-d1r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFW-gO-TBA" userLabel="First Responder" sceneMemberID="firstResponder"/>
