@@ -65,11 +65,10 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
         
         debugPrint("parse json called")
         
+//        let requestURL: NSURL = NSURL(string: "http://workoutapptesting.ddns.net/getusers.php")!
+//      let requestURL: NSURL = NSURL(string: "http://localhost/getusers.php")!
+      let requestURL: NSURL = NSURL(string: "http://98.253.68.160/getusers.php")!
         
-        
-        let requestURL: NSURL = NSURL(string: "http://localhost/getusers.php")!
-
-//        let requestURL: NSURL = NSURL(string: "http://98.253.68.160/getusers.php")!
         let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
         let session = URLSession.shared()
         let task = session.dataTask(with: urlRequest as URLRequest) {
