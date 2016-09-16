@@ -68,9 +68,8 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
 //        let requestURL: NSURL = NSURL(string: "http://workoutapptesting.ddns.net/getusers.php")!
 //      let requestURL: NSURL = NSURL(string: "http://localhost/getusers.php")!
       let requestURL: NSURL = NSURL(string: "http://98.253.68.160/getusers.php")!
-        var userNamesArray = [String]()
         let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
-        let session = URLSession.shared()
+        let session = URLSession.shared
         let task = session.dataTask(with: urlRequest as URLRequest) {
             (data, response, error) -> Void in
             
@@ -85,28 +84,51 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
                     
                    // jsonResult = try JSONSerialization.jsonObject(with: data!) as! NSDictionary
                     
-                    var jsonResult = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String: AnyObject]
+                    var jsonResult = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary //[String: AnyObject]
                     
-                    
-                    
-                    if let users = jsonResult["USER"] as? [String: AnyObject] {
-                        if let userNames = users["USERNAME"] {
+                    //print(jsonResult)
 
-                            for i in 0..<userNames.count{
-                                let usrnm = userNames[i] as! String
-                                print(usrnm)
-                                userNamesArray.append(usrnm)
-                                
-                            }
+                    
+                    
+                    
+                    var something: NSMutableArray
+                    something = jsonResult.mutableArrayValue(forKey: "USERS")
+                    let fname = something.mutableArrayValue(forKey: "FNAME")
+                    let lname = something.mutableArrayValue(forKey: "LNAME")
+                    let email = something.mutableArrayValue(forKey: "EMAIL")
+                    let uname = something.mutableArrayValue(forKey: "USERNAME")
+                    let password = something.mutableArrayValue(forKey: "PASSWORD")
+                    let weight = something.mutableArrayValue(forKey: "WEIGHT")
+                    let height = something.mutableArrayValue(forKey: "HEIGHT")
+
+
+
+
+                    for i in 0..<something.count {
+                       // usrHelp = userObj( FNAME: fname[i] as! String ,LNAME: lname[i],EMAIL: email[i],USERNAME: uname[i],PASSWORD: password[i],WEIGHT: weight[i],HEIGHT: height[i])
                         
+                       
                         
-                        }
+                        let usrHelp = userObj(FNAME: fname[i] as! String,
+                                              LNAME: lname[i] as! String,
+                                              EMAIL: email[i] as! String,
+                                              USERNAME: uname[i] as! String,
+                                              PASSWORD: password[i] as! String,
+                                              WEIGHT: weight[i] as! String,
+                                              HEIGHT: height[i] as! String)
+                        
+                        self.primaryUserArray.add(usrHelp)
                     }
-                    
-                    
-                        
-                    print(jsonResult)
 
+                    
+                    
+
+//                    print(self.primaryUserArray.count)
+                    
+//                    print(jsonResult)
+
+                    print("--------------------")
+                    print((self.primaryUserArray[0] as! userObj).description)
                 
                     
                     

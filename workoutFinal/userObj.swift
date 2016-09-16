@@ -23,15 +23,15 @@ class userObj: NSObject {
         
     }
     
-    init(FNAME: String, LNAME: String, EMAIL: String, USERNAME: String, PASSWORD: String, WEIGHT: Int, HEIGHT: Int ){
+    init(FNAME: String, LNAME: String, EMAIL: String, USERNAME: String, PASSWORD: String, WEIGHT: String, HEIGHT: String ){
         
         self.FNAME = FNAME
         self.LNAME = LNAME
         self.EMAIL = EMAIL
         self.USERNAME = USERNAME
         self.PASSWORD = PASSWORD
-        self.WEIGHT = WEIGHT
-        self.HEIGHT = HEIGHT
+        self.WEIGHT = Int(WEIGHT)
+        self.HEIGHT = Int(HEIGHT)
         
     }
     
