@@ -128,9 +128,9 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
 //                    print(jsonResult)
 
                     print("--------------------")
-                    print((self.primaryUserArray[0] as! userObj).description)
+                    print((self.primaryUserArray[1] as! userObj).description)
                 
-                    
+                    print((self.primaryUserArray[0] as! userObj).FNAME)
                     
                     
 
