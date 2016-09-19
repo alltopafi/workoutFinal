@@ -67,8 +67,19 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
         
 //        let requestURL: NSURL = NSURL(string: "http://workoutapptesting.ddns.net/getusers.php")!
 //      let requestURL: NSURL = NSURL(string: "http://localhost/getusers.php")!
-      let requestURL: NSURL = NSURL(string: "http://98.253.68.160/getusers.php")!
+      let requestURL: NSURL = NSURL(string: "http://98.253.68.160/getuserspost.php")!
+        
+        
         let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
+        
+        urlRequest.httpMethod="POST"
+        let postString = "username=\(usernameField.text!)&password=\(passwordField.text!)"
+        
+        
+        print(postString)
+        urlRequest.httpBody = postString.data(using: .utf8)
+        
+        
         let session = URLSession.shared
         let task = session.dataTask(with: urlRequest as URLRequest) {
             (data, response, error) -> Void in
@@ -105,9 +116,7 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
 
 
                     for i in 0..<something.count {
-                       // usrHelp = userObj( FNAME: fname[i] as! String ,LNAME: lname[i],EMAIL: email[i],USERNAME: uname[i],PASSWORD: password[i],WEIGHT: weight[i],HEIGHT: height[i])
-                        
-                       
+                                              
                         
                         let usrHelp = userObj(FNAME: fname[i] as! String,
                                               LNAME: lname[i] as! String,
@@ -128,11 +137,14 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
 //                    print(jsonResult)
 
                     print("--------------------")
-                    print((self.primaryUserArray[1] as! userObj).description)
+                    
+                    if(self.primaryUserArray.count != 0){
+                        
+                    print((self.primaryUserArray[0] as! userObj).description)
                 
                     print((self.primaryUserArray[0] as! userObj).FNAME)
                     
-                    
+                    }
 
                     
 
