@@ -25,14 +25,14 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
     @IBAction func loginButton(_ sender: AnyObject) {
        
         
-//        if(usernameField.text == "" || passwordField.text == "")
-//        {
-//            print("userObjList is missing")
-//        }else{
+        if(usernameField.text == "" || passwordField.text == "")
+        {
+            print("userObjList is missing")
+        }else{
   
             
         parseJSON()
-        
+        }
             
         }
         
@@ -62,11 +62,8 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
     
     func parseJSON() {
         
+//        debugPrint("parse json called")
         
-        debugPrint("parse json called")
-        
-//        let requestURL: NSURL = NSURL(string: "http://workoutapptesting.ddns.net/getusers.php")!
-//      let requestURL: NSURL = NSURL(string: "http://localhost/getusers.php")!
       let requestURL: NSURL = NSURL(string: "http://98.253.68.160/getuserspost.php")!
         
         
@@ -74,9 +71,6 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
         
         urlRequest.httpMethod="POST"
         let postString = "username=\(usernameField.text!)&password=\(passwordField.text!)"
-        
-        
-        print(postString)
         urlRequest.httpBody = postString.data(using: .utf8)
         
         
@@ -92,16 +86,10 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
                 //var jsonResult: AnyObject
                 
                 do{
-                    
-                   // jsonResult = try JSONSerialization.jsonObject(with: data!) as! NSDictionary
-                    
-                    var jsonResult = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary //[String: AnyObject]
+                    let jsonResult = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary //[String: AnyObject]
                     
                     //print(jsonResult)
 
-                    
-                    
-                    
                     var something: NSMutableArray
                     something = jsonResult.mutableArrayValue(forKey: "USERS")
                     let fname = something.mutableArrayValue(forKey: "FNAME")
@@ -113,10 +101,8 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
                     let height = something.mutableArrayValue(forKey: "HEIGHT")
 
 
-
-
                     for i in 0..<something.count {
-                                              
+                        
                         
                         let usrHelp = userObj(FNAME: fname[i] as! String,
                                               LNAME: lname[i] as! String,
@@ -129,23 +115,15 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
                         self.primaryUserArray.add(usrHelp)
                     }
 
+    
+                   print((self.primaryUserArray[0] as! userObj).description)
+                    //need to move to next screen at this point if there was a user 
                     
-                    
-
-//                    print(self.primaryUserArray.count)
-                    
-//                    print(jsonResult)
-
-                    print("--------------------")
-                    
-                    if(self.primaryUserArray.count != 0){
-                        
-                    print((self.primaryUserArray[0] as! userObj).description)
-                
-                    print((self.primaryUserArray[0] as! userObj).FNAME)
-                    
+                    if(self.primaryUserArray.count == 1){
+                        //go to next screen
+                    }else{
+                        //there was an error no user was found
                     }
-
                     
 
        
