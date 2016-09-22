@@ -14,37 +14,22 @@ import UIKit
 class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var usernameField: UITextField!
-
     @IBOutlet weak var passwordField: UITextField!
     
     var primaryUserArray: NSMutableArray = NSMutableArray()
     var data : NSMutableData = NSMutableData()
     
-    
-  
     @IBAction func loginButton(_ sender: AnyObject) {
-       
-        
-        if(usernameField.text == "" || passwordField.text == "")
+       if(usernameField.text == "" || passwordField.text == "")
         {
             print("userObjList is missing")
-        }else{
-  
-            
-        parseJSON()
+       }else{parseJSON()
         }
-            
-        }
-        
-
-    
-    
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
         
     }
 
@@ -53,26 +38,13 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
-    
-    
-    
-    
-    
     func parseJSON() {
-        
-//        debugPrint("parse json called")
-        
-      let requestURL: NSURL = NSURL(string: "http://98.253.68.160/getuserspost.php")!
-        
-        
+        let requestURL: NSURL = NSURL(string: "http://98.253.68.160/getuserspost.php")!
         let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
         
         urlRequest.httpMethod="POST"
         let postString = "username=\(usernameField.text!)&password=\(passwordField.text!)"
         urlRequest.httpBody = postString.data(using: .utf8)
-        
         
         let session = URLSession.shared
         let task = session.dataTask(with: urlRequest as URLRequest) {
@@ -82,16 +54,11 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
             let statusCode = httpResponse.statusCode
             
             if (statusCode == 200) {
-                
-                //var jsonResult: AnyObject
-                
                 do{
                     let jsonResult = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary //[String: AnyObject]
-                    
-                    //print(jsonResult)
-
+                
                     var something: NSMutableArray
-                    something = jsonResult.mutableArrayValue(forKey: "USERS")
+                        something = jsonResult.mutableArrayValue(forKey: "USERS")
                     let fname = something.mutableArrayValue(forKey: "FNAME")
                     let lname = something.mutableArrayValue(forKey: "LNAME")
                     let email = something.mutableArrayValue(forKey: "EMAIL")
@@ -100,47 +67,31 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
                     let weight = something.mutableArrayValue(forKey: "WEIGHT")
                     let height = something.mutableArrayValue(forKey: "HEIGHT")
 
-
                     for i in 0..<something.count {
+                            let usrHelp = userObj(FNAME: fname[i] as! String,
+                                                  LNAME: lname[i] as! String,
+                                                  EMAIL: email[i] as! String,
+                                                  USERNAME: uname[i] as! String,
+                                                  PASSWORD: password[i] as! String,
+                                                  WEIGHT: weight[i] as! String,
+                                                  HEIGHT: height[i] as! String)
                         
-                        
-                        let usrHelp = userObj(FNAME: fname[i] as! String,
-                                              LNAME: lname[i] as! String,
-                                              EMAIL: email[i] as! String,
-                                              USERNAME: uname[i] as! String,
-                                              PASSWORD: password[i] as! String,
-                                              WEIGHT: weight[i] as! String,
-                                              HEIGHT: height[i] as! String)
-                        
-                        self.primaryUserArray.add(usrHelp)
+                            self.primaryUserArray.add(usrHelp)
                     }
-
-    
-                   print((self.primaryUserArray[0] as! userObj).description)
-                    //need to move to next screen at this point if there was a user 
-                    
                     if(self.primaryUserArray.count == 1){
                         //go to next screen
                     }else{
-                        //there was an error no user was found
+                        //there was an error no user was found http status code != 200
                     }
-                    
-
-       
-                    } catch let error as NSError {
-                        print(error)
-                        
-                    }
-                    
-                    
-                }
+                } catch let error as NSError {
+                    print(error)
+                  }
+            }else{
+                //there was an error with connecting to the server
             }
-        
-        task.resume()
-
-        
-        
-    }
+        }//end of task
+            task.resume()
+    }//end of parse json method
     
     
 }
