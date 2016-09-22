@@ -16,6 +16,8 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    
+    
     var primaryUserArray: NSMutableArray = NSMutableArray()
     var data : NSMutableData = NSMutableData()
     
@@ -88,10 +90,16 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
                   }
             }else{
                 //there was an error with connecting to the server
+                self.throwAlert(title: "Error", message: "Cannot connect to server")
             }
         }//end of task
             task.resume()
     }//end of parse json method
     
+    func throwAlert(title: String, message: String){
+        let alert=UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert);
+        
+        show(alert, sender: self);
+    }
     
 }
