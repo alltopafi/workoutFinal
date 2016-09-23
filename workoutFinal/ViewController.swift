@@ -11,28 +11,36 @@ import UIKit
 
 
 
-class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDelegate {
+class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDelegate, UIAlertViewDelegate {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
     
-    
     var primaryUserArray: NSMutableArray = NSMutableArray()
     var data : NSMutableData = NSMutableData()
     
+    @IBAction func createAccountButton(_ sender: AnyObject) {
+      
+    }
     @IBAction func loginButton(_ sender: AnyObject) {
-       if(usernameField.text == "" || passwordField.text == "")
+        if(usernameField.text == "" || passwordField.text == "")
         {
             print("userObjList is missing")
-       }else{parseJSON()
+                let alertController = UIAlertController(title: "Error", message: "Must enter Username and Password fields.", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+       }else{
+            parseJSON()
+            print("parsing has finished here")
+            }
         }
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,15 +60,16 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
         let task = session.dataTask(with: urlRequest as URLRequest) {
             (data, response, error) -> Void in
             
+            
             let httpResponse = response as! HTTPURLResponse
             let statusCode = httpResponse.statusCode
             
             if (statusCode == 200) {
                 do{
-                    let jsonResult = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSDictionary //[String: AnyObject]
-                
+                    let jsonResult = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+                    
                     var something: NSMutableArray
-                        something = jsonResult.mutableArrayValue(forKey: "USERS")
+                        something = (jsonResult as AnyObject).mutableArrayValue(forKey: "USERS")
                     let fname = something.mutableArrayValue(forKey: "FNAME")
                     let lname = something.mutableArrayValue(forKey: "LNAME")
                     let email = something.mutableArrayValue(forKey: "EMAIL")
@@ -82,24 +91,32 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
                     }
                     if(self.primaryUserArray.count == 1){
                         //go to next screen
+                        print("we made it")
+                        
                     }else{
-                        //there was an error no user was found http status code != 200
+                        //there was an error no user was found
+                        DispatchQueue.main.sync(execute: {
+                            let alertController = UIAlertController(title: "Error", message: "Either Username or password is invalid.", preferredStyle: UIAlertControllerStyle.alert)
+                            let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                            alertController.addAction(okAction)
+                            self.present(alertController, animated: true, completion: nil)
+                        })
                     }
                 } catch let error as NSError {
                     print(error)
                   }
             }else{
                 //there was an error with connecting to the server
-                self.throwAlert(title: "Error", message: "Cannot connect to server")
+                print("we did not make it")
+                DispatchQueue.main.sync(execute: {
+                    let alertController = UIAlertController(title: "Error", message: "Connection error\nPlease try again.", preferredStyle: UIAlertControllerStyle.alert)
+                    let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
+                })
             }
         }//end of task
             task.resume()
-    }//end of parse json method
-    
-    func throwAlert(title: String, message: String){
-        let alert=UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert);
         
-        show(alert, sender: self);
-    }
-    
+    }//end of parse json method
 }
