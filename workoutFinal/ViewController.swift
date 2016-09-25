@@ -21,8 +21,10 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
     var data : NSMutableData = NSMutableData()
     
     @IBAction func createAccountButton(_ sender: AnyObject) {
-      
+        let controller = storyboard?.instantiateViewController(withIdentifier: "SuccessLoginViewController") as! SuccessLoginViewController
+        present(controller, animated: true, completion: nil)
     }
+    
     @IBAction func loginButton(_ sender: AnyObject) {
         if(usernameField.text == "" || passwordField.text == "")
         {
@@ -93,6 +95,11 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
                         //go to next screen
                         print("we made it")
                         
+                        DispatchQueue.main.sync {
+                            let controller = self.storyboard?.instantiateViewController(withIdentifier: "SuccessLoginViewController") as! SuccessLoginViewController
+                            self.present(controller, animated: true, completion: nil)
+
+                        }
                     }else{
                         //there was an error no user was found
                         DispatchQueue.main.sync(execute: {

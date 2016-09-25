@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="HnU-aw-BUp">
             <objects>
-                <viewController id="WuU-zW-ucR" customClass="ViewController" customModule="workoutFinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainView" id="WuU-zW-ucR" customClass="ViewController" customModule="workoutFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="19r-C9-x3E"/>
                         <viewControllerLayoutGuide type="bottom" id="ET3-Ra-GfY"/>
@@ -19,30 +19,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJm-PN-fgj">
-                                <frame key="frameInset" minX="74" minY="296" width="226" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <frame key="frameInset" minX="74" minY="359.5" height="30" maxX="75"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButton:" destination="WuU-zW-ucR" eventType="touchUpInside" id="3hm-ny-Lxj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBZ-k5-9Y2">
-                                <frame key="frameInset" minX="74" minY="364" width="226" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <frame key="frameInset" minX="74" minY="427.5" height="30" maxX="75"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <state key="normal" title="New user? Create account!"/>
                                 <connections>
                                     <action selector="createAccountButton:" destination="WuU-zW-ucR" eventType="touchUpInside" id="UFo-Fb-tNt"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4sl-Uc-RhM">
-                                <frame key="frameInset" minX="74" minY="146" width="226" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <frame key="frameInset" minX="74" minY="209.5" height="30" maxX="75"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uDJ-ZX-hME">
-                                <frame key="frameInset" minX="74" minY="223" width="226" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <frame key="frameInset" minX="74" minY="286.5" height="30" maxX="75"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
@@ -57,6 +57,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFW-gO-TBA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-338.39999999999998" y="-44.527736131934034"/>
+        </scene>
+        <!--Success Login View Controller-->
+        <scene sceneID="lfY-wT-fY7">
+            <objects>
+                <viewController storyboardIdentifier="SuccessLoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wvk-qQ-t9b" customClass="SuccessLoginViewController" customModule="workoutFinal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xsd-kl-ly6"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZBm-ht-rU0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Qw-jP-1lL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Success" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1R-sI-n47">
+                                <frame key="frameInset" minX="150" minY="323" width="65" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zzv-Ku-5Om" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="581" y="-226"/>
         </scene>
     </scenes>
 </document>
