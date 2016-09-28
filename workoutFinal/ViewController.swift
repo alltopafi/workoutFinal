@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+protocol userSignedInDelegate {
+    func userDidLogin(user:String)
+}
 
 
 class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDelegate, UIAlertViewDelegate {
@@ -16,13 +19,12 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    
+    var delegate:userSignedInDelegate? = nil
     var primaryUserArray: NSMutableArray = NSMutableArray()
     var data : NSMutableData = NSMutableData()
     
     @IBAction func createAccountButton(_ sender: AnyObject) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "SuccessLoginViewController") as! SuccessLoginViewController
-        present(controller, animated: true, completion: nil)
+        
     }
     
     @IBAction func loginButton(_ sender: AnyObject) {
@@ -50,8 +52,10 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
         // Dispose of any resources that can be recreated.
     }
     
+      
+    
     func parseJSON() {
-        let requestURL: NSURL = NSURL(string: "http://98.253.68.160/getuserspost.php")!
+        let requestURL: NSURL = NSURL(string: "http://52.42.86.96//getuserspost.php")!
         let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
         
         urlRequest.httpMethod="POST"
@@ -95,10 +99,19 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
                         //go to next screen
                         print("we made it")
                         
-                        DispatchQueue.main.sync {
-                            let controller = self.storyboard?.instantiateViewController(withIdentifier: "SuccessLoginViewController") as! SuccessLoginViewController
-                            self.present(controller, animated: true, completion: nil)
+//                        if (self.delegate != nil) {
+//                            self.delegate!.userDidLogin(user: self.usernameField.text!)
+//                            self.navigationController?.popViewController(animated: true)
+//                            
+//                        }
 
+                        DispatchQueue.main.sync {
+                            let controller = self.storyboard?.instantiateViewController(withIdentifier: "successLoginViewController") as! successLoginViewController
+                            controller.labelText = "Welcome "+(self.primaryUserArray[0] as!userObj).FNAME
+                           
+                            controller.buttonText = "Not "+(self.primaryUserArray[0] as! userObj).FNAME+"? Sign Out"
+                            self.present(controller, animated: true, completion: nil)
+                            
                         }
                     }else{
                         //there was an error no user was found
