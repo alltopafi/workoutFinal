@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="-391.19999999999999" y="-170.46476761619192"/>
         </scene>
-        <!--View Controller-->
+        <!--New User View Controller-->
         <scene sceneID="gHS-2M-AqY">
             <objects>
-                <viewController id="dwV-K3-bHk" sceneMemberID="viewController">
+                <viewController id="dwV-K3-bHk" customClass="NewUserViewController" customModule="workoutFinal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hO9-0x-H9n"/>
                         <viewControllerLayoutGuide type="bottom" id="etp-95-nS6"/>
@@ -100,14 +100,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dMn-6a-rgo">
                                 <frame key="frameInset" minX="179" minY="114" width="180" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bV1-LQ-f9E">
                                 <frame key="frameInset" minX="16" minY="164" width="343" height="30"/>
@@ -121,14 +121,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yi5-p1-4JZ">
                                 <frame key="frameInset" minX="16" minY="275" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BQd-xY-zdq">
                                 <frame key="frameInset" minX="16" minY="342" width="343" height="30"/>
@@ -142,24 +142,37 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height (inches)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K7s-cg-hCB">
                                 <frame key="frameInset" minX="16" minY="464" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egV-5g-9dj">
                                 <frame key="frameInset" minX="242" minY="617" width="107" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.041839435696601868" green="0.030435053631663322" blue="0.22386908531188965" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Create Account"/>
+                                <connections>
+                                    <action selector="createAccountBtn:" destination="dwV-K3-bHk" eventType="touchUpInside" id="8Tc-dv-EpP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="confpass" destination="BQd-xY-zdq" id="xxa-4I-lEZ"/>
+                        <outlet property="email" destination="bV1-LQ-f9E" id="kel-8N-SrL"/>
+                        <outlet property="fname" destination="9Tj-fz-u5j" id="cOL-bt-txf"/>
+                        <outlet property="height" destination="K7s-cg-hCB" id="Xbr-Et-adI"/>
+                        <outlet property="lname" destination="dMn-6a-rgo" id="38O-mu-l7n"/>
+                        <outlet property="pass" destination="Yi5-p1-4JZ" id="Byt-VJ-zQ4"/>
+                        <outlet property="uname" destination="D06-mq-ids" id="FCa-gI-9e5"/>
+                        <outlet property="weight" destination="fIc-ag-IjD" id="ePG-lQ-4Xm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WHm-nk-8be" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -214,6 +227,6 @@
         <image name="appBG" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5Oj-yN-wJX"/>
+        <segue reference="2nM-xy-nCf"/>
     </inferredMetricsTieBreakers>
 </document>
