@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class NewUserViewController: UIViewController {
+class NewUserViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var fname: UITextField!
     @IBOutlet weak var lname: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -163,8 +163,23 @@ class NewUserViewController: UIViewController {
         
     }//end of parse json method
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        fname.resignFirstResponder()
+        lname.resignFirstResponder()
+        email.resignFirstResponder()
+        uname.resignFirstResponder()
+        pass.resignFirstResponder()
+        confpass.resignFirstResponder()
+        weight.resignFirstResponder()
+        height.resignFirstResponder()
+        
+        return true
+    }
     
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
 
 }

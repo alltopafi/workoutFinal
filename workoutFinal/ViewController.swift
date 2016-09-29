@@ -9,17 +9,12 @@
 import Foundation
 import UIKit
 
-protocol userSignedInDelegate {
-    func userDidLogin(user:String)
-}
-
 
 class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDelegate, UIAlertViewDelegate {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    
-    var delegate:userSignedInDelegate? = nil
+   
     var primaryUserArray: NSMutableArray = NSMutableArray()
     var data : NSMutableData = NSMutableData()
     
@@ -98,12 +93,7 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
                     if(self.primaryUserArray.count == 1){
                         //go to next screen
                         print("we made it")
-                        
-//                        if (self.delegate != nil) {
-//                            self.delegate!.userDidLogin(user: self.usernameField.text!)
-//                            self.navigationController?.popViewController(animated: true)
-//                            
-//                        }
+
 
                         DispatchQueue.main.sync {
                             let controller = self.storyboard?.instantiateViewController(withIdentifier: "successLoginViewController") as! successLoginViewController
@@ -139,4 +129,17 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
             task.resume()
         
     }//end of parse json method
+    
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        usernameField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
