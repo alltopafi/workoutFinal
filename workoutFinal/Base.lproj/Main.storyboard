@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ET3-Ra-GfY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dWB-em-ud3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBG" translatesAutoresizingMaskIntoConstraints="NO" id="3Jh-s7-WBO"/>
@@ -25,19 +25,19 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="CKT-LH-p12">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="104" id="0QY-2A-T9e"/>
-                                            <constraint firstAttribute="width" constant="135" id="55i-PE-87X"/>
+                                            <constraint firstAttribute="width" constant="80" id="55i-PE-87X"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="99" id="bZl-MP-iOi"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.88169931994818651" green="0.88169931994818651" blue="0.88169931994818651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="CKT-LH-p12" firstAttribute="centerX" secondItem="Oj1-zn-HyI" secondAttribute="centerX" id="8KH-aT-bTb"/>
-                                    <constraint firstItem="CKT-LH-p12" firstAttribute="top" secondItem="Oj1-zn-HyI" secondAttribute="top" constant="8" id="MBe-eH-2mI"/>
-                                    <constraint firstItem="CKT-LH-p12" firstAttribute="leading" secondItem="Oj1-zn-HyI" secondAttribute="leading" constant="78" id="X4r-Gd-dUu"/>
+                                    <constraint firstItem="CKT-LH-p12" firstAttribute="centerX" secondItem="Oj1-zn-HyI" secondAttribute="centerX" id="BKu-o9-p2M"/>
+                                    <constraint firstItem="CKT-LH-p12" firstAttribute="top" secondItem="Oj1-zn-HyI" secondAttribute="topMargin" id="jlD-Qy-B7a"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJm-PN-fgj">
+                                <color key="backgroundColor" red="0.65633525516614166" green="0.79051560163497925" blue="0.73854292134677657" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButton:" destination="WuU-zW-ucR" eventType="touchUpInside" id="3hm-ny-Lxj"/>
@@ -58,6 +58,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBZ-k5-9Y2">
+                                <color key="backgroundColor" red="0.65633525516614166" green="0.79051560163497925" blue="0.73854292134677657" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Create account!"/>
                                 <connections>
                                     <action selector="createAccountButton:" destination="WuU-zW-ucR" eventType="touchUpInside" id="UFo-Fb-tNt"/>
@@ -67,19 +68,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ET3-Ra-GfY" firstAttribute="top" secondItem="Oj1-zn-HyI" secondAttribute="bottom" constant="113" id="3eC-lN-hA4"/>
                             <constraint firstItem="oJm-PN-fgj" firstAttribute="top" secondItem="uDJ-ZX-hME" secondAttribute="bottom" constant="40" id="Azb-LS-I3m"/>
                             <constraint firstItem="uDJ-ZX-hME" firstAttribute="top" secondItem="4sl-Uc-RhM" secondAttribute="bottom" constant="40" id="BBT-Gr-Z86"/>
                             <constraint firstItem="3Jh-s7-WBO" firstAttribute="leading" secondItem="dWB-em-ud3" secondAttribute="leading" id="BDX-V5-Bhb"/>
                             <constraint firstItem="4sl-Uc-RhM" firstAttribute="leading" secondItem="dWB-em-ud3" secondAttribute="leadingMargin" constant="52" id="CWT-PD-dIV"/>
-                            <constraint firstItem="Oj1-zn-HyI" firstAttribute="top" secondItem="19r-C9-x3E" secondAttribute="bottom" constant="69" id="Co6-j9-OAj"/>
+                            <constraint firstItem="Oj1-zn-HyI" firstAttribute="leading" secondItem="dWB-em-ud3" secondAttribute="leadingMargin" constant="30" id="KMG-eh-aFe"/>
                             <constraint firstItem="3Jh-s7-WBO" firstAttribute="top" secondItem="dWB-em-ud3" secondAttribute="top" id="L0P-aA-A14"/>
                             <constraint firstItem="oJm-PN-fgj" firstAttribute="leading" secondItem="qBZ-k5-9Y2" secondAttribute="leading" id="ONq-Ou-aO5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Oj1-zn-HyI" secondAttribute="trailing" constant="23" id="PJX-xI-Yzu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Oj1-zn-HyI" secondAttribute="trailing" constant="23" id="SdL-96-pMX"/>
+                            <constraint firstItem="Oj1-zn-HyI" firstAttribute="top" secondItem="19r-C9-x3E" secondAttribute="bottom" constant="69" id="SvG-50-qa1"/>
                             <constraint firstItem="4sl-Uc-RhM" firstAttribute="top" secondItem="19r-C9-x3E" secondAttribute="bottom" constant="174" id="UF0-dd-9Ih"/>
                             <constraint firstItem="qBZ-k5-9Y2" firstAttribute="top" secondItem="oJm-PN-fgj" secondAttribute="bottom" constant="40" id="YgR-RC-07F"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3Jh-s7-WBO" secondAttribute="trailing" constant="-55" id="Ymb-WB-Ay5"/>
-                            <constraint firstItem="Oj1-zn-HyI" firstAttribute="leading" secondItem="dWB-em-ud3" secondAttribute="leadingMargin" constant="30" id="ajJ-2D-9TU"/>
                             <constraint firstItem="uDJ-ZX-hME" firstAttribute="trailing" secondItem="oJm-PN-fgj" secondAttribute="trailing" id="fyn-U6-eD7"/>
                             <constraint firstItem="4sl-Uc-RhM" firstAttribute="centerX" secondItem="dWB-em-ud3" secondAttribute="centerX" id="hM9-Tq-2Sa"/>
                             <constraint firstItem="oJm-PN-fgj" firstAttribute="trailing" secondItem="qBZ-k5-9Y2" secondAttribute="trailing" id="iSO-Tx-7em"/>
@@ -87,6 +87,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="3Jh-s7-WBO" secondAttribute="bottom" constant="-69" id="jX9-K8-rvE"/>
                             <constraint firstItem="4sl-Uc-RhM" firstAttribute="trailing" secondItem="uDJ-ZX-hME" secondAttribute="trailing" id="nrG-7H-tbd"/>
                             <constraint firstItem="4sl-Uc-RhM" firstAttribute="leading" secondItem="uDJ-ZX-hME" secondAttribute="leading" id="sPF-dg-bhc"/>
+                            <constraint firstItem="ET3-Ra-GfY" firstAttribute="top" secondItem="Oj1-zn-HyI" secondAttribute="bottom" constant="102" id="vgI-1b-OtZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="2Or-gp-hft"/>
@@ -97,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFW-gO-TBA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-392.80000000000001" y="-171.36431784107947"/>
+            <point key="canvasLocation" x="-393.75" y="-172.18309859154931"/>
         </scene>
         <!--New User View Controller-->
         <scene sceneID="gHS-2M-AqY">
@@ -108,12 +109,13 @@
                         <viewControllerLayoutGuide type="bottom" id="etp-95-nS6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="B4F-A5-Gfz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBG" translatesAutoresizingMaskIntoConstraints="NO" id="hmj-3P-EQ5"/>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8v-dj-1l4"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDR-43-max">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="WuU-zW-ucR" kind="show" id="2nM-xy-nCf"/>
@@ -200,6 +202,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egV-5g-9dj">
                                 <color key="backgroundColor" red="0.041839435696601868" green="0.030435053631663322" blue="0.22386908531188965" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Create Account"/>
                                 <connections>
                                     <action selector="createAccountBtn:" destination="dwV-K3-bHk" eventType="touchUpInside" id="8Tc-dv-EpP"/>
@@ -273,7 +276,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ZBm-ht-rU0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Qw-jP-1lL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appBG" translatesAutoresizingMaskIntoConstraints="NO" id="6YO-Ln-xSk"/>
@@ -321,6 +324,6 @@
         <image name="lock" width="640" height="494"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5Oj-yN-wJX"/>
+        <segue reference="2nM-xy-nCf"/>
     </inferredMetricsTieBreakers>
 </document>
