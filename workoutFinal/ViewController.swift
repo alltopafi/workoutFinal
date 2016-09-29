@@ -99,7 +99,7 @@ class ViewController: UIViewController, URLSessionDataDelegate, UITextFieldDeleg
                             let controller = self.storyboard?.instantiateViewController(withIdentifier: "successLoginViewController") as! successLoginViewController
                             controller.labelText = "Welcome "+(self.primaryUserArray[0] as!userObj).FNAME
                            
-                            controller.buttonText = "Not "+(self.primaryUserArray[0] as! userObj).FNAME+"? Sign Out"
+                            controller.buttonText = "Not "+(self.primaryUserArray[0] as! userObj).FNAME+"? Sign Out "
                             self.present(controller, animated: true, completion: nil)
                             
                         }
