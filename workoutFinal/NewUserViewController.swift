@@ -17,6 +17,9 @@ class NewUserViewController: UIViewController {
     @IBOutlet weak var confpass: UITextField!
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var height: UITextField!
+    
+    
+    var primaryUserArray: NSMutableArray = NSMutableArray()
 
     @IBAction func createAccountBtn(_ sender: AnyObject) {
         
@@ -76,6 +79,10 @@ class NewUserViewController: UIViewController {
         
         urlRequest.httpMethod="POST"
         let postString = "fname=\(fname.text!)&lname=\(lname.text!)&email=\(email.text!)&username=\(uname.text!)&password=\(pass.text!)&weight=\(weight.text!)&height=\(height.text!)"
+        print(postString)
+        
+        
+        
         urlRequest.httpBody = postString.data(using: .utf8)
         
         let session = URLSession.shared
@@ -88,6 +95,58 @@ class NewUserViewController: UIViewController {
             
             if (statusCode == 200) {
                 
+                    //parsing the response
+                    do {
+                        //converting resonse to NSDictionary
+                        let myJSON =  try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                        
+                        //parsing the json
+                        if let parseJSON = myJSON {
+                            
+                            //creating a string
+                            var msg : String!
+                            
+                            //getting the json response
+                            msg = parseJSON["status"] as! String?
+                            
+                            if(msg == "Success"){
+                                //user was created
+                           
+                                let usrHelper = userObj(FNAME: self.fname.text!,
+                                                            LNAME: self.lname.text!,
+                                                            EMAIL: self.email.text!,
+                                                            USERNAME: self.uname.text!,
+                                                            PASSWORD: self.pass.text!,
+                                                            WEIGHT: self.weight.text!,
+                                                            HEIGHT: self.height.text!)
+                                
+                                self.primaryUserArray.add(usrHelper)
+                                
+                                
+                                DispatchQueue.main.sync {
+                                    let controller = self.storyboard?.instantiateViewController(withIdentifier: "successLoginViewController") as! successLoginViewController
+                                    controller.labelText = "Welcome "+(self.primaryUserArray[0] as!userObj).FNAME
+                                    
+                                    controller.buttonText = "Not "+(self.primaryUserArray[0] as! userObj).FNAME+"? Sign Out"
+                                    self.present(controller, animated: true, completion: nil)
+                                
+                                
+                                }
+                                }else{
+                                //user was not created
+                                DispatchQueue.main.sync(execute: {
+                                    let alertController = UIAlertController(title: "Error", message: "Username is already taken.", preferredStyle: UIAlertControllerStyle.alert)
+                                    let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                                    alertController.addAction(okAction)
+                                    self.present(alertController, animated: true, completion: nil)
+                                })
+                            }
+                            
+                            
+                        }
+                    } catch {
+                        print(error)
+                    }
             
             }else{
                 //there was an error with connecting to the server
