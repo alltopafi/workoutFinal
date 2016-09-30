@@ -32,6 +32,12 @@ class successLoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
     
+    override var shouldAutorotate: Bool {
+        return false
+    }
 
 }
