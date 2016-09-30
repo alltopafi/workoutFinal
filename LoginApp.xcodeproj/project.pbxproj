@@ -15,8 +15,8 @@
 		889097AB1D766BEC00BA47BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889097A91D766BEC00BA47BF /* Main.storyboard */; };
 		889097AD1D766BEC00BA47BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 889097AC1D766BEC00BA47BF /* Assets.xcassets */; };
 		889097B01D766BEC00BA47BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889097AE1D766BEC00BA47BF /* LaunchScreen.storyboard */; };
-		889097BB1D766BEC00BA47BF /* workoutFinalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889097BA1D766BEC00BA47BF /* workoutFinalTests.swift */; };
-		889097C61D766BEC00BA47BF /* workoutFinalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889097C51D766BEC00BA47BF /* workoutFinalUITests.swift */; };
+		889097BB1D766BEC00BA47BF /* LoginAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889097BA1D766BEC00BA47BF /* LoginAppTests.swift */; };
+		889097C61D766BEC00BA47BF /* LoginAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889097C51D766BEC00BA47BF /* LoginAppUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,14 +25,14 @@
 			containerPortal = 8890979A1D766BEC00BA47BF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 889097A11D766BEC00BA47BF;
-			remoteInfo = workoutFinal;
+			remoteInfo = LoginApp;
 		};
 		889097C21D766BEC00BA47BF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8890979A1D766BEC00BA47BF /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 889097A11D766BEC00BA47BF;
-			remoteInfo = workoutFinal;
+			remoteInfo = LoginApp;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -40,18 +40,18 @@
 		8840C4281D78CE4D0038FF0E /* userObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userObj.swift; sourceTree = "<group>"; };
 		887D97CB1D9B5B6300BC4FFC /* successLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = successLoginViewController.swift; sourceTree = "<group>"; };
 		887D97CF1D9B71CC00BC4FFC /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
-		889097A21D766BEC00BA47BF /* workoutFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = workoutFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		889097A21D766BEC00BA47BF /* LoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		889097A51D766BEC00BA47BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		889097A71D766BEC00BA47BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		889097AA1D766BEC00BA47BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		889097AC1D766BEC00BA47BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		889097AF1D766BEC00BA47BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		889097B11D766BEC00BA47BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		889097B61D766BEC00BA47BF /* workoutFinalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = workoutFinalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		889097BA1D766BEC00BA47BF /* workoutFinalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutFinalTests.swift; sourceTree = "<group>"; };
+		889097B61D766BEC00BA47BF /* LoginAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		889097BA1D766BEC00BA47BF /* LoginAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAppTests.swift; sourceTree = "<group>"; };
 		889097BC1D766BEC00BA47BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		889097C11D766BEC00BA47BF /* workoutFinalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = workoutFinalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		889097C51D766BEC00BA47BF /* workoutFinalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutFinalUITests.swift; sourceTree = "<group>"; };
+		889097C11D766BEC00BA47BF /* LoginAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		889097C51D766BEC00BA47BF /* LoginAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAppUITests.swift; sourceTree = "<group>"; };
 		889097C71D766BEC00BA47BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,9 +83,9 @@
 		889097991D766BEC00BA47BF = {
 			isa = PBXGroup;
 			children = (
-				889097A41D766BEC00BA47BF /* workoutFinal */,
-				889097B91D766BEC00BA47BF /* workoutFinalTests */,
-				889097C41D766BEC00BA47BF /* workoutFinalUITests */,
+				889097A41D766BEC00BA47BF /* LoginApp */,
+				889097B91D766BEC00BA47BF /* LoginAppTests */,
+				889097C41D766BEC00BA47BF /* LoginAppUITests */,
 				889097A31D766BEC00BA47BF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,14 +93,14 @@
 		889097A31D766BEC00BA47BF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				889097A21D766BEC00BA47BF /* workoutFinal.app */,
-				889097B61D766BEC00BA47BF /* workoutFinalTests.xctest */,
-				889097C11D766BEC00BA47BF /* workoutFinalUITests.xctest */,
+				889097A21D766BEC00BA47BF /* LoginApp.app */,
+				889097B61D766BEC00BA47BF /* LoginAppTests.xctest */,
+				889097C11D766BEC00BA47BF /* LoginAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		889097A41D766BEC00BA47BF /* workoutFinal */ = {
+		889097A41D766BEC00BA47BF /* LoginApp */ = {
 			isa = PBXGroup;
 			children = (
 				889097A51D766BEC00BA47BF /* AppDelegate.swift */,
@@ -113,33 +113,33 @@
 				889097AE1D766BEC00BA47BF /* LaunchScreen.storyboard */,
 				889097B11D766BEC00BA47BF /* Info.plist */,
 			);
-			path = workoutFinal;
+			path = LoginApp;
 			sourceTree = "<group>";
 		};
-		889097B91D766BEC00BA47BF /* workoutFinalTests */ = {
+		889097B91D766BEC00BA47BF /* LoginAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				889097BA1D766BEC00BA47BF /* workoutFinalTests.swift */,
+				889097BA1D766BEC00BA47BF /* LoginAppTests.swift */,
 				889097BC1D766BEC00BA47BF /* Info.plist */,
 			);
-			path = workoutFinalTests;
+			path = LoginAppTests;
 			sourceTree = "<group>";
 		};
-		889097C41D766BEC00BA47BF /* workoutFinalUITests */ = {
+		889097C41D766BEC00BA47BF /* LoginAppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				889097C51D766BEC00BA47BF /* workoutFinalUITests.swift */,
+				889097C51D766BEC00BA47BF /* LoginAppUITests.swift */,
 				889097C71D766BEC00BA47BF /* Info.plist */,
 			);
-			path = workoutFinalUITests;
+			path = LoginAppUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		889097A11D766BEC00BA47BF /* workoutFinal */ = {
+		889097A11D766BEC00BA47BF /* LoginApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 889097CA1D766BEC00BA47BF /* Build configuration list for PBXNativeTarget "workoutFinal" */;
+			buildConfigurationList = 889097CA1D766BEC00BA47BF /* Build configuration list for PBXNativeTarget "LoginApp" */;
 			buildPhases = (
 				8890979E1D766BEC00BA47BF /* Sources */,
 				8890979F1D766BEC00BA47BF /* Frameworks */,
@@ -149,14 +149,14 @@
 			);
 			dependencies = (
 			);
-			name = workoutFinal;
-			productName = workoutFinal;
-			productReference = 889097A21D766BEC00BA47BF /* workoutFinal.app */;
+			name = LoginApp;
+			productName = LoginApp;
+			productReference = 889097A21D766BEC00BA47BF /* LoginApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		889097B51D766BEC00BA47BF /* workoutFinalTests */ = {
+		889097B51D766BEC00BA47BF /* LoginAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 889097CD1D766BEC00BA47BF /* Build configuration list for PBXNativeTarget "workoutFinalTests" */;
+			buildConfigurationList = 889097CD1D766BEC00BA47BF /* Build configuration list for PBXNativeTarget "LoginAppTests" */;
 			buildPhases = (
 				889097B21D766BEC00BA47BF /* Sources */,
 				889097B31D766BEC00BA47BF /* Frameworks */,
@@ -167,14 +167,14 @@
 			dependencies = (
 				889097B81D766BEC00BA47BF /* PBXTargetDependency */,
 			);
-			name = workoutFinalTests;
-			productName = workoutFinalTests;
-			productReference = 889097B61D766BEC00BA47BF /* workoutFinalTests.xctest */;
+			name = LoginAppTests;
+			productName = LoginAppTests;
+			productReference = 889097B61D766BEC00BA47BF /* LoginAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		889097C01D766BEC00BA47BF /* workoutFinalUITests */ = {
+		889097C01D766BEC00BA47BF /* LoginAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 889097D01D766BEC00BA47BF /* Build configuration list for PBXNativeTarget "workoutFinalUITests" */;
+			buildConfigurationList = 889097D01D766BEC00BA47BF /* Build configuration list for PBXNativeTarget "LoginAppUITests" */;
 			buildPhases = (
 				889097BD1D766BEC00BA47BF /* Sources */,
 				889097BE1D766BEC00BA47BF /* Frameworks */,
@@ -185,9 +185,9 @@
 			dependencies = (
 				889097C31D766BEC00BA47BF /* PBXTargetDependency */,
 			);
-			name = workoutFinalUITests;
-			productName = workoutFinalUITests;
-			productReference = 889097C11D766BEC00BA47BF /* workoutFinalUITests.xctest */;
+			name = LoginAppUITests;
+			productName = LoginAppUITests;
+			productReference = 889097C11D766BEC00BA47BF /* LoginAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -222,7 +222,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8890979D1D766BEC00BA47BF /* Build configuration list for PBXProject "workoutFinal" */;
+			buildConfigurationList = 8890979D1D766BEC00BA47BF /* Build configuration list for PBXProject "LoginApp" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -235,9 +235,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				889097A11D766BEC00BA47BF /* workoutFinal */,
-				889097B51D766BEC00BA47BF /* workoutFinalTests */,
-				889097C01D766BEC00BA47BF /* workoutFinalUITests */,
+				889097A11D766BEC00BA47BF /* LoginApp */,
+				889097B51D766BEC00BA47BF /* LoginAppTests */,
+				889097C01D766BEC00BA47BF /* LoginAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -286,7 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				889097BB1D766BEC00BA47BF /* workoutFinalTests.swift in Sources */,
+				889097BB1D766BEC00BA47BF /* LoginAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				889097C61D766BEC00BA47BF /* workoutFinalUITests.swift in Sources */,
+				889097C61D766BEC00BA47BF /* LoginAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,12 +303,12 @@
 /* Begin PBXTargetDependency section */
 		889097B81D766BEC00BA47BF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 889097A11D766BEC00BA47BF /* workoutFinal */;
+			target = 889097A11D766BEC00BA47BF /* LoginApp */;
 			targetProxy = 889097B71D766BEC00BA47BF /* PBXContainerItemProxy */;
 		};
 		889097C31D766BEC00BA47BF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 889097A11D766BEC00BA47BF /* workoutFinal */;
+			target = 889097A11D766BEC00BA47BF /* LoginApp */;
 			targetProxy = 889097C21D766BEC00BA47BF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -429,10 +429,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 43A7KU2U67;
-				INFOPLIST_FILE = workoutFinal/Info.plist;
+				INFOPLIST_FILE = LoginApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alltop.jesse.workoutFinal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alltop.jesse.LoginApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -443,10 +443,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 43A7KU2U67;
-				INFOPLIST_FILE = workoutFinal/Info.plist;
+				INFOPLIST_FILE = LoginApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alltop.jesse.workoutFinal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alltop.jesse.LoginApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -456,12 +456,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = workoutFinalTests/Info.plist;
+				INFOPLIST_FILE = LoginAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alltop.jesse.workoutFinalTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alltop.jesse.LoginAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/workoutFinal.app/workoutFinal";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoginApp.app/LoginApp";
 			};
 			name = Debug;
 		};
@@ -469,43 +469,43 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = workoutFinalTests/Info.plist;
+				INFOPLIST_FILE = LoginAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alltop.jesse.workoutFinalTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alltop.jesse.LoginAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/workoutFinal.app/workoutFinal";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoginApp.app/LoginApp";
 			};
 			name = Release;
 		};
 		889097D11D766BEC00BA47BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = workoutFinalUITests/Info.plist;
+				INFOPLIST_FILE = LoginAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alltop.jesse.workoutFinalUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alltop.jesse.LoginAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = workoutFinal;
+				TEST_TARGET_NAME = LoginApp;
 			};
 			name = Debug;
 		};
 		889097D21D766BEC00BA47BF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = workoutFinalUITests/Info.plist;
+				INFOPLIST_FILE = LoginAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alltop.jesse.workoutFinalUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alltop.jesse.LoginAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = workoutFinal;
+				TEST_TARGET_NAME = LoginApp;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8890979D1D766BEC00BA47BF /* Build configuration list for PBXProject "workoutFinal" */ = {
+		8890979D1D766BEC00BA47BF /* Build configuration list for PBXProject "LoginApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				889097C81D766BEC00BA47BF /* Debug */,
@@ -514,7 +514,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		889097CA1D766BEC00BA47BF /* Build configuration list for PBXNativeTarget "workoutFinal" */ = {
+		889097CA1D766BEC00BA47BF /* Build configuration list for PBXNativeTarget "LoginApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				889097CB1D766BEC00BA47BF /* Debug */,
@@ -523,7 +523,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		889097CD1D766BEC00BA47BF /* Build configuration list for PBXNativeTarget "workoutFinalTests" */ = {
+		889097CD1D766BEC00BA47BF /* Build configuration list for PBXNativeTarget "LoginAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				889097CE1D766BEC00BA47BF /* Debug */,
@@ -532,7 +532,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		889097D01D766BEC00BA47BF /* Build configuration list for PBXNativeTarget "workoutFinalUITests" */ = {
+		889097D01D766BEC00BA47BF /* Build configuration list for PBXNativeTarget "LoginAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				889097D11D766BEC00BA47BF /* Debug */,
